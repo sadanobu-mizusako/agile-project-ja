@@ -69,58 +69,65 @@ def main():
     インプットを受け取り、各種関数を呼び出す
     """
     ans = None #初期値はNone
-    message = "Input calculation type.\n"
-    message += "1: addition, a + b\n"
-    message += "2: subtraction, a - b\n"
-    message += "3: multiplication, a * b\n"
-    message += "4: division, a / b\n"
-    message += "5: exponent, a ^ b\n"
-    message += "6: square root, √a\n"
-    choices = ("1","2","3","4","5","6")
-    choice = check_choice(message, choices)
 
-    if choice == "1":
-        message = "Input a and b for a + b\n"
-        message += "a = "
-        a = check_calculation_input(message, ans, False, False)
-        message = "b = "
-        b = check_calculation_input(message, ans, False, False)
-        ans = addition(a, b)
-        print(f"{a} + {b} = {ans}")
+    while True:
+        message = "Input calculation type.\n"
+        message += "1: addition, a + b\n"
+        message += "2: subtraction, a - b\n"
+        message += "3: multiplication, a * b\n"
+        message += "4: division, a / b\n"
+        message += "5: exponent, a ^ b\n"
+        message += "6: square root, √a\n"
+        message += "7: exit\n"
+        choices = ("1","2","3","4","5","6","7")
+        choice = check_choice(message, choices)
 
-    if choice == "2":
-        message = "Input a and b for a - b\n"
-        message += "a = "
-        a = check_calculation_input(message, ans, False, False)
-        message = "b = "
-        b = check_calculation_input(message, ans, False, False)
-        ans = subtraction(a, b)
-        print(f"{a} - {b} = {ans}")
+        if choice == "1":
+            message = "Input a and b for a + b\n"
+            message += "a = "
+            a = check_calculation_input(message, ans, False, False)
+            message = "b = "
+            b = check_calculation_input(message, ans, False, False)
+            ans = addition(a, b)
+            print(f"{a} + {b} = {ans}")
 
-    if choice == "3":
-        message = "Input a and b for a * b\n"
-        message += "a = "
-        a = check_calculation_input(message, ans, False, False)
-        message = "b = "
-        b = check_calculation_input(message, ans, False, False)
-        ans = multiplication(a, b)
-        print(f"{a} * {b} = {ans}")
+        if choice == "2":
+            message = "Input a and b for a - b\n"
+            message += "a = "
+            a = check_calculation_input(message, ans, False, False)
+            message = "b = "
+            b = check_calculation_input(message, ans, False, False)
+            ans = subtraction(a, b)
+            print(f"{a} - {b} = {ans}")
 
-    if choice == "4":
-        message = "Input a and b for a / b\n"
-        message += "a = "
-        a = check_calculation_input(message, ans, False, False)
-        message = "b = "
-        b = check_calculation_input(message, ans, False, False)
-        ans = division(a, b)
-        print(f"{a} / {b} = {ans}")
+        if choice == "3":
+            message = "Input a and b for a * b\n"
+            message += "a = "
+            a = check_calculation_input(message, ans, False, False)
+            message = "b = "
+            b = check_calculation_input(message, ans, False, False)
+            ans = multiplication(a, b)
+            print(f"{a} * {b} = {ans}")
 
-    if choice == "6":
-        message = "Input a for √a\n"
-        message += "a = "
-        a = check_calculation_input(message, ans, False, False)
-        ans = square_root(a)
-        print(f"{a} ** 0.5 = {ans}")
+        if choice == "4":
+            message = "Input a and b for a / b\n"
+            message += "a = "
+            a = check_calculation_input(message, ans, False, False)
+            message = "b = "
+            b = check_calculation_input(message, ans, False, False)
+            ans = division(a, b)
+            print(f"{a} / {b} = {ans}")
+
+        if choice == "6":
+            message = "Input a for √a\n"
+            message += "a = "
+            a = check_calculation_input(message, ans, False, False)
+            ans = square_root(a)
+            print(f"{a} ** 0.5 = {ans}")
+
+        if choice == "7":
+            print("Exit.")
+            return
 
 if __name__ == "__main__":
     main()
