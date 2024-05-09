@@ -27,5 +27,3 @@ Input calculation type.
 4: division, a / b（割り算）  
 5: exponent, a ^ b（べき乗）  
 6: square root, √a （平方根）  
-
-
