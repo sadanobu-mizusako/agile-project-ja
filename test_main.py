@@ -1,4 +1,4 @@
-from main import addition, check_choice, check_calculation_input, division, square_root
+from main import addition, subtraction, multiplication, check_choice, check_calculation_input, division, square_root
 
 def test_addition():
     cases = [
@@ -8,6 +8,24 @@ def test_addition():
 
     for case in cases:
         assert addition(case[0], case[1]) == case[2]
+
+def test_subtraction():
+    cases = [
+        (2,1,1),
+        (2,1.1,0.9),
+    ]
+
+    for case in cases:
+        assert subtraction(case[0], case[1]) == case[2]
+
+def test_multiplication():
+    cases = [
+        (2,9,18),
+        (1.1,1.1,1.21),
+    ]
+
+    for case in cases:
+        assert multiplication(case[0], case[1]) == case[2]        
 
 test_addition()
 
