@@ -52,10 +52,18 @@ def addition(a, b):
     return a + b
 
 def subtraction(a, b):
-    return a - b
+#    return a - b
+    return round((a - b),10)
+    """
+    -float小数の誤差が出るので大きな桁の計算は対応できませんが小数点10桁で丸めています
+    """
 
 def multiplication(a, b):
-    return a * b
+#    return a * b
+    return round((a * b),10)
+    """
+    -float小数の誤差が出るので大きな桁の計算は対応できませんが小数点10桁で丸めています
+    """
 
 def division(a, b):
     return a / b
